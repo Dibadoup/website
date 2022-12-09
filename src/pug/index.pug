@@ -20,29 +20,22 @@ html(lang='en')
 
         include includes/navbar
 
-        section.page-section.clearfix
+        section.page-section.about-heading
             .container
-                .intro
-                    img.intro-img.img-fluid.mb-3.mb-lg-0.rounded(src='assets/img/intro.jpg', alt='...')
-                    .intro-text.left-0.text-center.bg-faded.p-5.rounded
-                        h2.section-heading.mb-4
-                            span.section-heading-upper Fresh Coffee
-                            span.section-heading-lower Worth Drinking
-                        p.mb-3
-                            | Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!
-                        .intro-button.mx-auto
-                            a.btn.btn-primary.btn-xl(href='#!') Visit Us Today!
-
-        section.page-section.cta
-            .container
-                .row
-                    .col-xl-9.mx-auto
-                        .cta-inner.bg-faded.text-center.rounded
-                            h2.section-heading.mb-4
-                                span.section-heading-upper Our Promise
-                                span.section-heading-lower To You
-                            p.mb-0
-                                | When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!
+                img.img-fluid.rounded.about-heading-img.mb-3.mb-lg-0(src='assets/img/about.jpg', alt='...')
+                .about-heading-content
+                    .row
+                        .col-xl-9.col-lg-10.mx-auto
+                            .bg-faded.rounded.p-5
+                                h2.section-heading.mb-4
+                                    span.section-heading-upper Strong Coffee, Strong Roots
+                                    span.section-heading-lower About Our Cafe
+                                p
+                                    | Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.
+                                p.mb-0
+                                    | We guarantee that you will fall in
+                                    em lust
+                                    |  with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.
 
         include includes/footer
 
