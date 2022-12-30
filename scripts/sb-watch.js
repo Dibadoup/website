@@ -4,7 +4,7 @@ const _ = require('lodash');
 const chokidar = require('chokidar');
 const upath = require('upath');
 const renderAssets = require('./render-assets');
-const renderPug = require('./render-pug');
+const renderTwig = require('./render-twig');
 const renderScripts = require('./render-scripts');
 const renderSCSS = require('./render-scss');
 
@@ -14,9 +14,9 @@ const watcher = chokidar.watch('src', {
 
 let READY = false;
 
-process.title = 'pug-watch';
+process.title = 'twig-watch';
 process.stdout.write('Loading');
-let allPugFiles = {};
+let allTwigFiles = {};
 
 watcher.on('add', filePath => _processFile(upath.normalize(filePath), 'add'));
 watcher.on('change', filePath => _processFile(upath.normalize(filePath), 'change'));
@@ -28,21 +28,21 @@ watcher.on('ready', () => {
 _handleSCSS();
 
 function _processFile(filePath, watchEvent) {
-    
+
     if (!READY) {
-        if (filePath.match(/\.pug$/)) {
-            if (!filePath.match(/includes/) && !filePath.match(/mixins/) && !filePath.match(/\/pug\/layouts\//)) {
-                allPugFiles[filePath] = true;
-            }    
-        }    
+        if (filePath.match(/\.twig$/)) {
+            if (!filePath.match(/includes/) && !filePath.match(/mixins/) && !filePath.match(/\/twig\/layouts\//)) {
+                allTwigFiles[filePath] = true;
+            }
+        }
         process.stdout.write('.');
         return;
     }
 
     console.log(`### INFO: File event: ${watchEvent}: ${filePath}`);
 
-    if (filePath.match(/\.pug$/)) {
-        return _handlePug(filePath, watchEvent);
+    if (filePath.match(/\.twig$/)) {
+        return _handleTwig(filePath, watchEvent);
     }
 
     if (filePath.match(/\.scss$/)) {
@@ -62,22 +62,22 @@ function _processFile(filePath, watchEvent) {
 
 }
 
-function _handlePug(filePath, watchEvent) {
+function _handleTwig(filePath, watchEvent) {
     if (watchEvent === 'change') {
-        if (filePath.match(/includes/) || filePath.match(/mixins/) || filePath.match(/\/pug\/layouts\//)) {
-            return _renderAllPug();
+        if (filePath.match(/includes/) || filePath.match(/mixins/) || filePath.match(/\/twig\/layouts\//)) {
+            return _renderAllTwig();
         }
-        return renderPug(filePath);
+        return renderTwig(filePath);
     }
-    if (!filePath.match(/includes/) && !filePath.match(/mixins/) && !filePath.match(/\/pug\/layouts\//)) {
-        return renderPug(filePath);
+    if (!filePath.match(/includes/) && !filePath.match(/mixins/) && !filePath.match(/\/twig\/layouts\//)) {
+        return renderTwig(filePath);
     }
 }
 
-function _renderAllPug() {
+function _renderAllTwig() {
     console.log('### INFO: Rendering All');
-    _.each(allPugFiles, (value, filePath) => {
-        renderPug(filePath);
+    _.each(allTwigFiles, (value, filePath) => {
+        renderTwig(filePath);
     });
 }
 

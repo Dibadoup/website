@@ -1,7 +1,7 @@
 'use strict';
 const upath = require('upath');
 const sh = require('shelljs');
-const renderPug = require('./render-pug');
+const renderTwig = require('./render-twig');
 
 const srcPath = upath.resolve(upath.dirname(__filename), '../src');
 
@@ -9,11 +9,11 @@ sh.find(srcPath).forEach(_processFile);
 
 function _processFile(filePath) {
     if (
-        filePath.match(/\.pug$/)
+        filePath.match(/\.twig$/)
         && !filePath.match(/include/)
         && !filePath.match(/mixin/)
-        && !filePath.match(/\/pug\/layouts\//)
+        && !filePath.match(/\/twig\/layouts\//)
     ) {
-        renderPug(filePath);
+        renderTwig(filePath);
     }
 }

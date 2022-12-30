@@ -38,7 +38,7 @@ Clone the source files of the theme and navigate into the theme's root directory
 
 * `yarn build` builds the project - this builds assets, HTML, JS, and CSS into `dist`
 * `yarn build:assets` copies the files in the `src/assets/` directory into `dist`
-* `yarn build:pug` compiles the Pug located in the `src/pug/` directory into `dist`
+* `yarn build:twig` compiles the Twig located in the `src/twig/` directory into `dist`
 * `yarn build:scripts` brings the `src/js/scripts.js` file into `dist`
 * `yarn build:scss` compiles the SCSS files located in the `src/scss/` directory into `dist`
 * `yarn clean` deletes the `dist` directory to prepare for rebuilding the project
