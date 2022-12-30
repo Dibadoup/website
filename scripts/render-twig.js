@@ -6,8 +6,9 @@ const sh = require('shelljs');
 const prettier = require('prettier');
 
 module.exports = function rendertwig(filePath) {
-    const destPath = filePath.replace(/src\/twig\//, 'dist/').replace(/\.twig$/, '.html');
-    const srcPath = upath.resolve(upath.dirname(__filename), '../src');
+    filePath = upath.resolve(filePath);
+    const destPath = upath.resolve(filePath.replace(/src\/twig\//, 'dist/').replace(/\.twig$/, '.html'));
+
     const destPathDirname = upath.dirname(destPath);
     if (!sh.test('-e', destPathDirname)) {
         sh.mkdir('-p', destPathDirname);
