@@ -15,9 +15,8 @@ module.exports = function rendertwig(filePath) {
     }
 
     console.log(`### INFO: Rendering ${filePath} to ${destPath}`);
-    twig.renderFile(filePath, {
-        // vars
-    }, (err, html) => {
+    twig.cache(false);
+    twig.renderFile(filePath, (err, html) => {
         const prettified = prettier.format(html, {
             printWidth: 1000,
             tabWidth: 4,
