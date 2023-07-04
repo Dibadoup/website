@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Galadriel Pigot" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        {% include '../includes/css.html' %}
+    </head>
+    <body>
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-lower">Sellerie Dibadoup</span>
+            </h1>
+        </header>
+        {% include '../includes/navbar.html' %}
+        {% block content %}{% endblock %}
+        {% include '../includes/footer.html' %}
+        {% include '../includes/scripts.html' %}
+    </body>
+</html>

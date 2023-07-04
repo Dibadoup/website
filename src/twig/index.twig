@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-    {% include 'includes/header.twig' %}
-    <body>
-        {% include 'includes/header.html' %}
-        {% include 'includes/navbar.html' %}
+{% extends "components/base.twig" %}
+
+{% block title %}{{ 'Sellerie Dibadoup' }}{% endblock %}
+{% block content %}
         <section class="page-section about-heading">
             <div class="container">
                 <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="assets/img/pauline_robin/saut_gue.jpg" alt="franchissement d'un gué avec une selle prestige" />
@@ -30,7 +28,4 @@
                 </div>
             </div>
         </section>
-        {% include 'includes/footer.html' %}
-        {% include 'includes/scripts.html' %}
-    </body>
-</html>
+{% endblock %}

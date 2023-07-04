@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-    {% include 'includes/header.twig' %}
-    <body>
-        {% include 'includes/header.html' %}
-        {% include 'includes/navbar.html' %}
+{% extends "components/base.twig" %}
+
+{% block title %}{{ 'Sellerie Dibadoup | Boutique' }}{% endblock %}
+{% block content %}
         <section class="page-section cta">
             <div class="container">
                 <div class="row">
@@ -83,7 +81,4 @@
                 </div>
             </div>
         </section>
-        {% include 'includes/footer.html' %}
-        {% include 'includes/scripts.html' %}
-    </body>
-</html>
+{% endblock %}
