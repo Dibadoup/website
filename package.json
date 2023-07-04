@@ -23,9 +23,9 @@
         "concurrently": "7.6.0",
         "postcss": "8.4.20",
         "prettier": "2.8.1",
-        "twig": "1.15.4",
         "sass": "1.57.1",
         "shelljs": "0.8.5",
+        "twig": "1.15.4",
         "upath": "2.0.1"
     }
 }
