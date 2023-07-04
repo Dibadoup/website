@@ -6,8 +6,11 @@
         <meta name="description" content="" />
         <meta name="author" content="Galadriel Pigot" />
         <title>{% block title %}{% endblock %}</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        {% include '../includes/css.html' %}
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/jpg" href="favicon.jpg" />
+        <link href="assets/fonts/fonts.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <header>
@@ -18,6 +21,6 @@
         {% include '../includes/navbar.html' %}
         {% block content %}{% endblock %}
         {% include '../includes/footer.html' %}
-        {% include '../includes/scripts.html' %}
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

@@ -11,8 +11,7 @@ function _processFile(filePath) {
     if (
         filePath.match(/\.twig$/)
         && !filePath.match(/include/)
-        && !filePath.match(/mixin/)
-        && !filePath.match(/\/twig\/layouts\//)
+        && !filePath.match(/components/)
     ) {
         renderTwig(filePath);
     }

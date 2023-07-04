@@ -5,7 +5,6 @@ const chokidar = require('chokidar');
 const upath = require('upath');
 const renderAssets = require('./render-assets');
 const renderTwig = require('./render-twig');
-const renderScripts = require('./render-scripts');
 const renderSCSS = require('./render-scss');
 
 const watcher = chokidar.watch('src', {
@@ -50,10 +49,6 @@ function _processFile(filePath, watchEvent) {
             return _handleSCSS(filePath, watchEvent);
         }
         return;
-    }
-
-    if (filePath.match(/src\/js\//)) {
-        return renderScripts();
     }
 
     if (filePath.match(/src\/assets\//)) {

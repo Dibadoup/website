@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /assets/
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /

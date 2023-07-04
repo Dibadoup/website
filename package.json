@@ -1,40 +1,18 @@
 {
-    "title": "Business Casual",
-    "name": "startbootstrap-business-casual",
-    "version": "7.0.8",
     "scripts": {
-        "build": "npm run clean && npm run build:twig && npm run build:scss && npm run build:scripts && npm run build:assets",
+        "build": "npm run clean && npm run build:twig && npm run build:scss && npm run build:assets",
         "build:assets": "node scripts/build-assets.js",
         "build:twig": "node scripts/build-twig.js",
-        "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
         "clean": "node scripts/clean.js",
         "start": "npm run build && node scripts/start.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
-    },
-    "description": "A casual HTML website theme for businesses built with Bootstrap",
-    "keywords": [
-        "css",
-        "sass",
-        "html",
-        "responsive",
-        "theme",
-        "template"
-    ],
-    "homepage": "https://startbootstrap.com/theme/business-casual",
-    "bugs": {
-        "url": "https://github.com/StartBootstrap/startbootstrap-business-casual/issues",
-        "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
     "author": "Start Bootstrap",
     "contributors": [
         "David Miller (https://davidmiller.io/)"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/StartBootstrap/startbootstrap-business-casual.git"
-    },
     "dependencies": {
         "bootstrap": "5.2.3"
     },
