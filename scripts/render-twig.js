@@ -17,17 +17,22 @@ module.exports = function rendertwig(filePath) {
     console.log(`### INFO: Rendering ${filePath} to ${destPath}`);
     twig.cache(false);
     twig.renderFile(filePath, (err, html) => {
-        const prettified = prettier.format(html, {
-            printWidth: 1000,
-            tabWidth: 4,
-            singleQuote: true,
-            proseWrap: 'preserve',
-            endOfLine: 'lf',
-            parser: 'html',
-            htmlWhitespaceSensitivity: 'ignore'
-        });
+      if (err) {
+        console.error('[Twig] render error', err);
+        return;
+      }
 
-        fs.writeFileSync(destPath, prettified);
+      prettier.format(html, {
+        printWidth: 1000,
+        tabWidth: 4,
+        singleQuote: true,
+        proseWrap: 'preserve',
+        endOfLine: 'lf',
+        parser: 'html',
+        htmlWhitespaceSensitivity: 'ignore'
+      }).then((prettifiedHtml) => {
+        fs.writeFileSync(destPath, prettifiedHtml);
         console.log(`### INFO: Rendered ${filePath} to ${destPath}`);
+      }).catch((err) => console.error('[Twig] error', err))
     });
 };
