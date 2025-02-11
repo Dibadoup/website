@@ -14,18 +14,18 @@
         "David Miller (https://davidmiller.io/)"
     ],
     "dependencies": {
-        "bootstrap": "5.2.3"
+        "bootstrap": "5.3.3"
     },
     "devDependencies": {
-        "autoprefixer": "10.4.13",
-        "browser-sync": "2.27.11",
-        "chokidar": "3.5.3",
+        "autoprefixer": "10.4.20",
+        "browser-sync": "2.29.3",
+        "chokidar": "3.6.0",
         "concurrently": "7.6.0",
-        "postcss": "8.4.20",
-        "prettier": "2.8.1",
-        "sass": "1.57.1",
+        "postcss": "8.5.2",
+        "prettier": "2.8.8",
+        "sass": "1.84.0",
         "shelljs": "0.8.5",
-        "twig": "1.15.4",
+        "twig": "1.17.1",
         "upath": "2.0.1"
     }
 }
