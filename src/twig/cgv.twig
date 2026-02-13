@@ -5,17 +5,20 @@
 		<section class="page-section cta">
 			<div class="container">
 				<div class="row">
-					<div class="col-xl-9 mx-auto">
+					<div class="col-xl-9 mx-auto" itemscope itemtype="https://schema.org/Organization">
 						<div class="cta-inner bg-faded text-center rounded">
 							<h2 class="section-heading mb-5">
 								<span class="section-heading-upper">Informations Générales</span>
-								<span class="section-heading-lower">SASU Dibadoup</span>
+								<span class="section-heading-lower" itemprop="name">SASU Dibadoup</span>
 							</h2>
 							<ul class="list-unstyled list-hours mb-5 text-left mx-auto">
 								<li class="list-unstyled-item list-hours-item d-flex">
 									Nom Commercial
 									<span class="ms-auto">Sellerie Dibadoup</span>
 								</li>
+                        		<!-- The SIRET and SIREN as metadata (https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/) -->
+                                <meta itemprop="iso6523Code" content="0002:918706011" />
+                                <meta itemprop="iso6523Code" content="0009:91870601100015" />
 								<li class="list-unstyled-item list-hours-item d-flex">
 									SIRET
 									<span class="ms-auto">91870601100015</span>
@@ -29,17 +32,23 @@
 									<span class="ms-auto">FR91870601100015</span>
 								</li>
 							</ul>
-							<p class="address mb-5">
+							<p class="address mb-5" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
 
 								<strong>Adresse administrative</strong>
 								<br/>
-								Aucun accueil du public sur place<br/>
-								7 Hent Karrig Kamm, 29380 Saint Thurien, France
+								<i>Aucun accueil du public sur place</i><br/>
+                                <span itemprop="streetAddress">
+                                7 Hent Karrig Kamm
+                                </span>,<br/>
+                                <span itemprop="postalCode">29380</span>
+                                <span itemprop="addressLocality">Saint Thurien</span>,
+                                <span itemprop="addressCountry">France</span>
 							</p>
 							<p class="address mb-5">
 								<em>
 									<strong>Contact</strong>
 									<br/>
+                                    <meta itemprop="email" content="sellerie@dibadoup.eu" />
 									<a href="mailto:sellerie@dibadoup.eu">sellerie@dibadoup.eu</a>
 								</em>
 							</p>
